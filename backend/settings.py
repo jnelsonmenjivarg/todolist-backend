@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-+u2f&^6id98z@ucb)n06+fi9dv9x((-jbj0t(27#+@lvmg2_ll
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Opción A: Solo permitir tu dominio de Render (Más seguro)
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'todolist-backend-8l4g.onrender.com'  # <--- TU URL EXACTA SIN 'https://'
+]
+
+# Opción B: Permitir a todo el mundo (Más rápido para evitar errores futuros)
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,3 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",   
 ]
+
